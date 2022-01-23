@@ -6,7 +6,7 @@ app.use(express.json())
 app.get("/", (req, res) => {
     res.send("Home Page")
 })
-app.use("/user", userRouter)
+
 db.sequelizeConfig.sync({ force: false })
     .then(
         () => {
@@ -18,6 +18,8 @@ db.sequelizeConfig.sync({ force: false })
             console.log("DB Connection Failed...")
             console.log(err)
         }
-    )
+)
+app.use("/user", userRouter)
 app.listen(8080)
+
 

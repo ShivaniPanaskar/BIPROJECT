@@ -22,5 +22,5 @@ const sequelizeConfig = new Sequelize(
 const db = {}
 db.Sequelize = Sequelize
 db.sequelizeConfig = sequelizeConfig
-db.user = require("./user.js")(sequelizeConfig, Sequelize)
+db.users = require("./user.js")(sequelizeConfig, Sequelize)
 module.exports = db    //connection of db

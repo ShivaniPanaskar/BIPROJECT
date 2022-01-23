@@ -1,21 +1,10 @@
 var db = require("../model/postgres.sequelize.js");
-var User = db.users
+var User = db.users 
+// var User = require("../model/user")
 module.exports = {
 
     getUser: (req, res) => {
         res.send("this is function getctuser")
-        //get all the user from the db
-        //User var  // select * from table users;
-        // User.findAll()
-        //     .then(
-        //         (result) => {
-        //             res.status(200).send(result)
-        //         }
-        //     )
-        //     .catch(
-        //         (err) => {
-        //             res.send(err)
-        //         }
 
     },
     saveUser: (req, res) => {
@@ -29,12 +18,10 @@ module.exports = {
             age: req.body.age,
             married: req.body.married
 
-            // id: 12,
-            // name: Shivani,
-            // age: 26,
-            // married: false
 
         };
+        console.log(user)
+
         User.create(user)
             .then(
                 (result) => {
